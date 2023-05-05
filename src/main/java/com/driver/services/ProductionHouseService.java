@@ -7,15 +7,24 @@ import com.driver.repository.ProductionHouseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+
 @Service
 public class ProductionHouseService {
 
     @Autowired
     ProductionHouseRepository productionHouseRepository;
 
-    public Integer addProductionHouseToDb(ProductionHouseEntryDto productionHouseEntryDto){
+    public Integer addProductionHouseToDb(ProductionHouseEntryDto productionEntry){
 
-        return  null;
+        ProductionHouse productionsHouse = new ProductionHouse(productionEntry.getName());
+
+        productionsHouse.setRatings(0.0);
+
+        ProductionHouse addedProductionHouseToDB = productionHouseRepository.save(productionsHouse);
+
+
+        return addedProductionHouseToDB.getId();
     }
 
 
