@@ -33,13 +33,13 @@ public class SubscriptionService {
         //Total amount calculate
         int amount=0;
         if(sub.getSubscriptionType().toString().equals("BASIC")) {
-            amount = 500 + (300 * subscriptionEntryDto.getNoOfScreensRequired());
+            amount = 500 + (200* subscriptionEntryDto.getNoOfScreensRequired());
         }
         else if (sub.getSubscriptionType().toString().equals("PRO")) {
-            amount = 800 + (350 * subscriptionEntryDto.getNoOfScreensRequired());
+            amount = 800 + (250 * subscriptionEntryDto.getNoOfScreensRequired());
         }
         else{
-            amount = 1000 + (450 * subscriptionEntryDto.getNoOfScreensRequired());
+            amount = 1000 + (350 * subscriptionEntryDto.getNoOfScreensRequired());
         }
 
         sub.setTotalAmountPaid(amount);
